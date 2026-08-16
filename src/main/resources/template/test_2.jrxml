@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test_2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3a7a187-2291-4978-9295-2d3614745e10">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="560" height="30" uuid="b93097d6-09b8-425e-b381-c8e348998269"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Тестовый документ 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="120" width="200" height="14" uuid="e9ada1b1-d0d4-450b-bc18-f213d215f980">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Параметр 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="170" width="200" height="14" uuid="ef94945f-5dd3-4646-98d2-7f89b0f1e497">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Параметр 2]]></text>
+			</staticText>
+			<line>
+				<reportElement x="280" y="134" width="200" height="1" uuid="473f1467-db30-4fba-9b4f-d1a374562122"/>
+			</line>
+			<line>
+				<reportElement x="280" y="184" width="200" height="1" uuid="c9553467-45db-4c78-bd52-4f7ce3399eb7"/>
+			</line>
+			<ellipse>
+				<reportElement x="210" y="230" width="110" height="110" uuid="25278a51-b6ce-4f92-b9fd-29b7a7005340">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</ellipse>
+			<line>
+				<reportElement x="210" y="230" width="110" height="110" uuid="4daae031-dc5f-41b5-9327-66cccc07ed3f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="210" y="230" width="110" height="110" uuid="71936720-f6c5-44dd-b323-9d76a8952640"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
