@@ -6,4 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface TemplateRepository extends CrudRepository<TemplateEntity, Integer>{
 
     TemplateEntity getTemplateEntitiesById(Long id);
+
+    TemplateEntity getTemplateEntitiesByValue(String value);
 }

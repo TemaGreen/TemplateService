@@ -49,10 +49,21 @@ NO MAXVALUE
 CACHE 1;
  
  insert into template(id, name, value, create_date, path, startdate, enddate) values
- 	(nextval('template_sequence'), 'Тест1', 'test1', current_date, '', cast(current_date as date), null),
- 	(nextval('template_sequence'), 'Тест2', 'test2', (current_date - interval '1 day'), '', cast((current_date - interval '1 day') as date ), null),
- 	(nextval('template_sequence'), 'Тест3', 'test3', (current_date - interval '2 day'), '', cast((current_date - interval '2 day') as date), null);
+ 	(nextval('template_sequence'), 'Тест1', 'test1', current_date, 'template/test_1.jrxml', cast(current_date as date), null),
+ 	(nextval('template_sequence'), 'Тест2', 'test2', (current_date - interval '1 day'), 'template/test_2.jrxml', cast((current_date - interval '1 day') as date ), null),
+ 	(nextval('template_sequence'), 'Тест3', 'test3', (current_date - interval '2 day'), 'template/test_3.pdf', cast((current_date - interval '2 day') as date), null);
  
+ insert into reference_jeneral(id, id_faset, id_pfaset, num, name, value) values
+	(nextval('reference_jeneral_sequence'), 1, null, null, 'Шаблон значений для отчета test1', '');
+ 
+ insert into reference_jeneral(id, id_faset, id_pfaset, num, name, value) values
+	(nextval('reference_jeneral_sequence'), 1, null, 0, 'Имя', 'name'),
+ 	(nextval('reference_jeneral_sequence'), 1, null, 1, 'Фамилия', 'surename');
+ 
+ insert into template_service(id, template, dictionary) values 
+ 	(nextval('template_service_sequence'), (select t.id from template t where t.value = 'test1'), (select rj.id from reference_jeneral rj where name = 'Шаблон значений для отчета test1')),
+ 	(nextval('template_service_sequence'), (select t.id from template t where t.value = 'test2'), null),
+ 	(nextval('template_service_sequence'), (select t.id from template t where t.value = 'test3'), null);
  
  
  
