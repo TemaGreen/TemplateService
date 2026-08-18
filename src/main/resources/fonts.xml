@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="CourierNew">
+        <normal>fonts/cour.ttf</normal>
+        <bold>fonts/courbd.ttf</bold>
+        <italic>fonts/couri.ttf</italic>
+        <boldItalic>fonts/courbi.ttf</boldItalic>        
+        <pdfEmbedded>true</pdfEmbedded>        
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">Courier New</export>
+            <export key="net.sf.jasperreports.xhtml">Courier New</export>
+        </exportFonts>
+    </fontFamily>
+    <fontFamily name="Arial">
+        <normal>fonts/arial.ttf</normal>
+        <bold>fonts/arialbd.ttf</bold>
+        <italic>fonts/ariali.ttf</italic>
+        <boldItalic>fonts/arialbi.ttf</boldItalic>
+        <pdfEmbedded>true</pdfEmbedded>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">Arial</export>
+            <export key="net.sf.jasperreports.xhtml">Arial</export>
+        </exportFonts>
+    </fontFamily>
+</fontFamilies>

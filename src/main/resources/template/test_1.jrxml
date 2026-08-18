@@ -10,42 +10,46 @@
 	<detail>
 		<band height="802" splitType="Stretch">
 			<textField>
-				<reportElement x="83" y="90" width="250" height="14" uuid="0948ba3d-01e9-4bbe-b9fa-9251393f81d4">
+				<reportElement x="83" y="90" width="250" height="15" uuid="0948ba3d-01e9-4bbe-b9fa-9251393f81d4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<textElement>
-					<font fontName="Times New Roman" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{name} != null ? $P{name} : ""]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="20" y="90" width="60" height="14" uuid="08e48a73-8218-40a0-8c06-ba2a0258c334">
+				<reportElement x="20" y="90" width="60" height="15" uuid="08e48a73-8218-40a0-8c06-ba2a0258c334">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
-					<font fontName="Times New Roman" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Имя :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="20" width="560" height="30" uuid="e6c27eff-0a14-4edd-b7d6-8f3579a3c9bc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="23"/>
+					<font fontName="Arial" size="22"/>
 				</textElement>
 				<text><![CDATA[Тестовый документ 1]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="20" y="110" width="60" height="14" uuid="e068b140-6867-4827-b27e-8bad909dfd0b"/>
+				<reportElement x="20" y="110" width="60" height="15" uuid="e068b140-6867-4827-b27e-8bad909dfd0b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement textAlignment="Right">
-					<font fontName="Times New Roman" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Фамилия :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="83" y="110" width="250" height="14" uuid="ea3c2dd0-eee6-4ae0-b260-eba913020390"/>
+				<reportElement x="83" y="110" width="250" height="15" uuid="ea3c2dd0-eee6-4ae0-b260-eba913020390">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement>
-					<font fontName="Times New Roman" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{surename} != null ? $P{surename} : ""]]></textFieldExpression>
 			</textField>
