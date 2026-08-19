@@ -24,4 +24,16 @@
             <export key="net.sf.jasperreports.xhtml">Arial</export>
         </exportFonts>
     </fontFamily>
+    <fontFamily name="Times New Roman">
+        <normal>fonts/times.ttf</normal>
+        <bold>fonts/timesbd.ttf</bold>
+        <italic>fonts/timesi.ttf</italic>
+        <boldItalic>fonts/timesbi.ttf</boldItalic>
+        <pdfEmbedded>true</pdfEmbedded>
+        <pdfEncoding>Identity-H</pdfEncoding>
+        <exportFonts>
+            <export key="net.sf.jasperreports.html">Times New Roman</export>
+            <export key="net.sf.jasperreports.xhtml">Times New Roman</export>
+        </exportFonts>
+    </fontFamily>
 </fontFamilies>

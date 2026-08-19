@@ -53,8 +53,6 @@ public class TemplateServiceImp implements TemplateService {
         TemplateEntity template = repository.getTemplateEntitiesByValue(templateValue);
         Resource templateRes = resourceLoader.getResource(classPath + template.getPath());
 
-        dataSource.getRecordCount();
-
         try(InputStream is = templateRes.getInputStream()) {
             if (!params.containsKey("classPath")) {
                 params.put("classPath", resourceLoader.getResource(templateDir).getURL().toString());
