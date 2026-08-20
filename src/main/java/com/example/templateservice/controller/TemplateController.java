@@ -39,7 +39,6 @@ public class TemplateController {
 
     @PostMapping("/generate")
     public ResponseEntity<Resource> generateTemplate(@RequestBody TemplateRequest templateRequest){
-        try {
             byte[] pdfFile = templateService.generatePdf(templateRequest.getTemplateValue(), templateRequest.getParams(), new JRBeanCollectionDataSource(templateRequest.getDataSource()));
             Resource resource = new ByteArrayResource(pdfFile);
             HttpHeaders headers = new HttpHeaders();
@@ -49,16 +48,19 @@ public class TemplateController {
                     .contentType(MediaType.APPLICATION_PDF)
                     .contentLength(pdfFile.length)
                     .body(resource);
-        } catch (Exception e){
-            log.error("Ошибка генерации", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
     }
 
     @ExceptionHandler({GenerateDocumentException.class, FileNotFoundException.class})
     public ResponseEntity<ErrorResponse> handlerGenerateDocument(RuntimeException ex){
         return ResponseEntity
                 .badRequest()
+                .body(new ErrorResponse(ex.getMessage()));
+    }
+
+    @ExceptionHandler({Exception.class})
+    public ResponseEntity<ErrorResponse> handlerException(Exception ex){
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ErrorResponse(ex.getMessage()));
     }
 }
