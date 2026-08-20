@@ -1,18 +1,24 @@
 package com.example.templateservice.controller;
 
 import com.example.templateservice.data.Template;
+import com.example.templateservice.exceptions.GenerateDocumentException;
 import com.example.templateservice.request.TemplateRequest;
+import com.example.templateservice.response.ErrorResponse;
 import com.example.templateservice.service.interfaces.TemplateService;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.FileNotFoundException;
 
+@Slf4j
 @RestController
 @RequestMapping("/template")
 public class TemplateController {
@@ -27,21 +33,32 @@ public class TemplateController {
 
 
     @GetMapping("/test")
-    public TemplateRequest test(){
-        String temaplteValue = "test1";
-        Map<String, Object> params = new HashMap<>();
-        params.put("name", "Артем");
-        params.put("surename", "Хамидуллин");
-        List<Object> temp = new ArrayList<>();
-        temp.add("");
-        //templateService.generatePdf(temaplteValue, params, new JRBeanCollectionDataSource(temp));
-        System.out.println("ok");
-        return new TemplateRequest(temaplteValue, params, temp);
+    public String test(){
+        return "";
     }
 
     @PostMapping("/generate")
-    public ResponseEntity generateTemplate(@RequestBody TemplateRequest templateRequest){
-        templateService.generatePdf(templateRequest.getTemplateValue(), templateRequest.getParams(), new JRBeanCollectionDataSource(templateRequest.getDataSource()));
-        return ResponseEntity.ok("OK");
+    public ResponseEntity<Resource> generateTemplate(@RequestBody TemplateRequest templateRequest){
+        try {
+            byte[] pdfFile = templateService.generatePdf(templateRequest.getTemplateValue(), templateRequest.getParams(), new JRBeanCollectionDataSource(templateRequest.getDataSource()));
+            Resource resource = new ByteArrayResource(pdfFile);
+            HttpHeaders headers = new HttpHeaders();
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.pdf\"");
+            return ResponseEntity.ok()
+                    .headers(headers)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .contentLength(pdfFile.length)
+                    .body(resource);
+        } catch (Exception e){
+            log.error("Ошибка генерации", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @ExceptionHandler({GenerateDocumentException.class, FileNotFoundException.class})
+    public ResponseEntity<ErrorResponse> handlerGenerateDocument(RuntimeException ex){
+        return ResponseEntity
+                .badRequest()
+                .body(new ErrorResponse(ex.getMessage()));
     }
 }

@@ -9,5 +9,5 @@ public interface TemplateService {
 
     Template getTemplateById(Long id);
 
-    void generatePdf(String templateValue, Map<String, Object> params, JRBeanCollectionDataSource dataSource);
+    byte[] generatePdf(String templateValue, Map<String, Object> params, JRBeanCollectionDataSource dataSource);
 }
