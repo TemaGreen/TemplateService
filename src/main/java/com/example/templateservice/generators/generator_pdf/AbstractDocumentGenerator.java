@@ -1,8 +1,8 @@
-package com.example.templateservice.strategy.generator_pdf;
+package com.example.templateservice.generators.generator_pdf;
 
 import com.example.templateservice.data.TemplateDTO;
 import com.example.templateservice.entity.TemplateEntity;
-import com.example.templateservice.strategy.DocumentGenerator;
+import com.example.templateservice.generators.DocumentGenerator;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

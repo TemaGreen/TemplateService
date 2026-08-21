@@ -1,6 +1,6 @@
 package com.example.templateservice.manager;
 
-import com.example.templateservice.strategy.DocumentGenerator;
+import com.example.templateservice.generators.DocumentGenerator;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

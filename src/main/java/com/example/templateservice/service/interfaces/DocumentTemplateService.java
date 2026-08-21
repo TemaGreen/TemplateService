@@ -5,7 +5,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import java.util.Map;
 
-public interface TemplateService {
+public interface DocumentTemplateService {
 
     Template getTemplateById(Long id);
 

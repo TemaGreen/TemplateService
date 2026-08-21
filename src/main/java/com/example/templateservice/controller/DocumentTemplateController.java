@@ -4,7 +4,7 @@ import com.example.templateservice.data.Template;
 import com.example.templateservice.exceptions.GenerateDocumentException;
 import com.example.templateservice.request.TemplateRequest;
 import com.example.templateservice.response.ErrorResponse;
-import com.example.templateservice.service.interfaces.TemplateService;
+import com.example.templateservice.service.interfaces.DocumentTemplateService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +21,10 @@ import java.io.FileNotFoundException;
 @Slf4j
 @RestController
 @RequestMapping("/template")
-public class TemplateController {
+public class DocumentTemplateController {
 
     @Autowired
-    private TemplateService templateService;
+    private DocumentTemplateService templateService;
 
     @GetMapping("/{id}")
     public Template getTeamplteById(@PathVariable Long id){

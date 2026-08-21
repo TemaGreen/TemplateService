@@ -1,8 +1,8 @@
-package com.example.templateservice.strategy.generator_pdf;
+package com.example.templateservice.generators.generator_pdf;
 
 import com.example.templateservice.exceptions.GenerateDocumentException;
 import com.example.templateservice.manager.FilenameManager;
-import com.example.templateservice.strategy.DocumentGenerator;
+import com.example.templateservice.generators.DocumentGenerator;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.*;
 import org.springframework.beans.factory.annotation.Autowired;

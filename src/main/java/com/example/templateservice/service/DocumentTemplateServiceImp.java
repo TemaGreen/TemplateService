@@ -8,19 +8,18 @@ import com.example.templateservice.exceptions.GenerateDocumentException;
 import com.example.templateservice.manager.DocumentGeneratorManager;
 import com.example.templateservice.mapper.TemplateMapper;
 import com.example.templateservice.repository.TemplateRepository;
-import com.example.templateservice.service.interfaces.TemplateService;
+import com.example.templateservice.service.interfaces.DocumentTemplateService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Map;
 
 @Slf4j
 @Service
-public class TemplateServiceImp implements TemplateService {
+public class DocumentTemplateServiceImp implements DocumentTemplateService {
 
     @Autowired
     private TemplateRepository repository;

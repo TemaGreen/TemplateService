@@ -1,4 +1,4 @@
-package com.example.templateservice.strategy;
+package com.example.templateservice.generators;
 
 import com.example.templateservice.data.TemplateDTO;
 import com.example.templateservice.exceptions.GenerateDocumentException;
